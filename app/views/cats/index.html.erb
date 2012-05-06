@@ -1,0 +1,9 @@
+Каталог разработка 1.0
+<%- @cats.each do |t| %>
+<b><h3>Название каталогов</h3></b>
+<%= t.title %>
+    <%= link_to "Изменить",edit_cat_path(t.id) %>
+    <%= link_to "Удалить",t, :confirm => 'are you sure?', :method => :delete  %>
+    <%= link_to "Показать",cat_path(t.id) %>
+<%end%>
+<%= link_to "Add", new_cat_path %>
