@@ -1,0 +1,5 @@
+<%=simple_form_for @cats, :url => {:action =>"create"} do |f| %>
+<b>Enter name of catalog</b>
+<%= f.text_field :title %>
+<%= f.submit("Create") %>
+<%-end%>

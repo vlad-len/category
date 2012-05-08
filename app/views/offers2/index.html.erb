@@ -1,0 +1,16 @@
+Каталог разработка 1.0
+<h1>Hello,<%=current_user.email %> </h1>
+<b><h3>Название каталогов</h3></b>
+<%- @cats.each do |t| %>
+<%=link_to t.title, cat_path(t.id) %>
+    <BR>
+<%end%>
+
+
+
+<% if user_signed_in? %>
+    <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+<% end %>
+<% if admin_signed_in? %>
+    <%= link_to "Выйти из админки", destroy_admin_session_path, method: :delete%>
+<%end%>

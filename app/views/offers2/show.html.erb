@@ -1,9 +1,5 @@
- <%= @cats.title %>
+<%= @cats.title %>
 <%=link_to 'Назад', cats_path %>
-
-<B>Заполнение обьявления</B>
-<BR>
-
 <%=@cats.offers.each do |p| %>
     <%= p.title %> <BR>
     <%= p.description %>  <BR>
@@ -16,4 +12,3 @@
 
     <HR>
 <%end%>
-<%= link_to "Удалить",p, :method => :delete  %>

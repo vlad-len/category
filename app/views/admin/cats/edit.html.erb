@@ -1,0 +1,5 @@
+<%=simple_form_for @cats, :url => {:action =>"update"}do |f| %>
+    <b>Enter name of catalog</b>
+    <%= f.text_field :title %>
+    <%= f.submit("Update") %>
+<%-end%>

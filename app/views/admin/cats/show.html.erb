@@ -1,0 +1,40 @@
+ <%= @cats.title %>
+<%=link_to 'Назад', admin_cats_path %>
+
+<B>Заполнение обьявления</B>
+<BR>
+
+<%=@cats.offers.each do |p| %>
+    <%= p.title %> <BR>
+    <%= p.description %>  <BR>
+    <%= p.short_description %>  <BR>
+    <%= p.phone1 %>  <BR>
+    <%= p.phone2 %>  <BR>
+    <%= p.email %> <BR>
+    <%= p.city %>  <BR>
+    <%= p.address %>
+
+    <HR>
+<%end%>
+<%= link_to "Удалить",p, :method => :delete  %>
+
+<%=  simple_form_for ([@cats, @cats.offers.build]) do |f| %>
+    <BR>
+    <%= f. label :Название %>
+    <%= f.input :title %>
+    <BR>
+    <%= f.text_area :description %>
+    <BR>
+    <%= f.text_field :short_description %>
+    <BR>
+    <%= f.input :phone1 %>
+    <%= f.input :phone2 %>
+    <BR>
+    Введите ваше мыло
+    <%= f.email_field :email %>
+    <BR>
+    <%= f.input :city %>
+    <BR>
+    <%= f.input :address %>
+    <%= f.submit("Добавить") %>
+<%end%>
