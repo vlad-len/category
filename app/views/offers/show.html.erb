@@ -1,0 +1,35 @@
+<%- model_class = @offer.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @offer.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @offer.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:short_description) %>:</strong></dt>
+  <dd><%= @offer.short_description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone1) %>:</strong></dt>
+  <dd><%= @offer.phone1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone2) %>:</strong></dt>
+  <dd><%= @offer.phone2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @offer.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @offer.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @offer.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cat_id) %>:</strong></dt>
+  <dd><%= @offer.cat_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              offers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_offer_path(@offer), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              offer_path(@offer),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

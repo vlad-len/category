@@ -1,21 +1,40 @@
-<%=  simple_form_for @offer,:url=>admin_offer_path(@offer) do |f| %>
+<div class="page-header">
+  <h1>Создаем Обьявления</h1>
+</div>
+
+<%=  simple_form_for [ :admin, @offer] do |f| %>
     <BR>
-    <%= f. label :Название %>
+    <span class="label label-info">Введите название</span>
     <%= f.input :title %>
     <BR>
     <%= f.text_area :description %>
     <BR>
     <%= f.text_field :short_description %>
     <BR>
+    <span class="label label-info">Введите Номер телефона</span>
     <%= f.input :phone1 %>
     <%= f.input :phone2 %>
     <BR>
-    Введите ваше мыло
-    <%= f.email_field :email %>
+    <span class="label label-info">Введите мыло</span>
+    <br>
+    <div class="input-prepend">
+      <span class="add-on">@</span>
+    <%= f.email_field :email, :class=>'span2' %>
+    </div>
     <BR>
     <%= f.input :city %>
     <BR>
     <%= f.input :address %>
+    <div class="btn-group open">
+      <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Выберите католог
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <%=f.association :cat %>
+        <li><a href="#"></a></li>
+        <li class="divider"></li>
+      </ul>
+    </div>
     <%=f.association :cat %>
-    <%= f.submit("Обновить") %>
+
+    <%= f.button :submit, :class=>'btn btn-success'  %>
 <%end%>

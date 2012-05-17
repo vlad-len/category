@@ -1,11 +1,36 @@
-Каталог разработка 1.1
 
-<b><h3>Название каталогов</h3></b>
-<%- @cats.each do |t| %>
-    <%=link_to t.title, admin_cat_path(t.id) %>
-    <%= link_to "Изменить",edit_admin_cat_path(t.id) %>
-    <%= link_to "Удалить",admin_cat_path(t.id), :confirm => 'are you sure?', :method => :delete  %>
-    <%= link_to "Создать обьявление",admin_offers_path(t.id) %>
-    <BR>
-<%end%>
-<%= link_to "Add", new_admin_cat_path %>
+<%- model_class = Cat.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:title) %></th>
+    <th><%= model_class.human_attribute_name(:created_at) %></th>
+    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @cats.each do |cat| %>
+      <tr>
+        <td><%= link_to cat.title, admin_cat_path(cat) %></td>
+        <td><%=l cat.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_cat_path(cat), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      cat_path(cat),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("Новый каталог")),
+            new_admin_cat_path(:id),
+            :class => 'btn btn-primary' %>
+<%= link_to t('Создать', :default => t("Создать обьявление")),
+            new_admin_offer_path,
+            :class => 'btn btn-group' %>

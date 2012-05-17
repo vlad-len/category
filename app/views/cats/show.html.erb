@@ -1,19 +1,15 @@
-<%- model_class = @cat.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<%= @cats.title %>
+<%=link_to 'Назад',cats_path %>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @cat.title %></dd>
-</dl>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              cats_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_cat_path(@cat), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              cat_path(@cat),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-              :class => 'btn btn-danger' %>
-</div>
+<%=@cats.offers.each do |p| %>
+    <%= p.title %> <BR>
+    <%= p.description %>  <BR>
+    <%= p.short_description %>  <BR>
+    <%= p.phone1 %>  <BR>
+    <%= p.phone2 %>  <BR>
+    <%= p.email %> <BR>
+    <%= p.city %>  <BR>
+    <%= p.address %>
+    <HR>
+<%end%>

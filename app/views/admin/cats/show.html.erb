@@ -1,4 +1,4 @@
- <%= @cats.title %>
+<%= @cats.title %>
 <%=link_to 'Назад', admin_cats_path %>
 
 <B>Заполнение обьявления</B>
@@ -13,8 +13,8 @@
     <%= p.email %> <BR>
     <%= p.city %>  <BR>
     <%= p.address %>
-     <%= link_to "Удалить",admin_offer_path(p), :method => :delete  %>
-     <%= link_to "Изменить",edit_admin_offer_path(p.id)  %>
+    <%= link_to "Удалить",admin_offer_path(p), :method => :delete  %>
+    <%= link_to "Изменить",edit_admin_offer_path(p.id)  %>
     <HR>
 <%end%>
 
