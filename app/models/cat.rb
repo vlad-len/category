@@ -1,3 +1,3 @@
 class Cat < ActiveRecord::Base
-  has_many :offers  , :dependent=>:destroy
+  has_many :offers , :dependent=>:destroy
 end

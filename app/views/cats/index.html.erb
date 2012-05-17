@@ -1,6 +1,24 @@
-Каталог разработка 1.0
-<b><h3>Название каталогов</h3></b>
-<%- @cats.each do |t| %>
-    <%=link_to t.title, cat_path(t.id) %>
-    <BR>
-<%end%>
+<%- model_class = Cat.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cats.each do |cat| %>
+      <tr>
+        <td><%= link_to cat.title, cat_path(cat) %></td>
+        <td><%=l cat.created_at %></td>
+        <td>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,3 +1,3 @@
 class Offer < ActiveRecord::Base
-  belongs_to :cats
+  belongs_to :cat
 end

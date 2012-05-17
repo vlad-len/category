@@ -4,8 +4,8 @@
 <%- @cats.each do |t| %>
     <%=link_to t.title, admin_cat_path(t.id) %>
     <%= link_to "Изменить",edit_admin_cat_path(t.id) %>
-    <%= link_to "Удалить",t, :confirm => 'are you sure?', :method => :delete,:url => "admin_cat_path"  %>
-    <%= link_to "Показать",admin_cat_path(t.id) %>
+    <%= link_to "Удалить",admin_cat_path(t.id), :confirm => 'are you sure?', :method => :delete  %>
+    <%= link_to "Создать обьявление",admin_offers_path(t.id) %>
     <BR>
 <%end%>
 <%= link_to "Add", new_admin_cat_path %>

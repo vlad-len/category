@@ -1,0 +1,21 @@
+<%=  simple_form_for @offer,:url=>admin_offer_path(@offer) do |f| %>
+    <BR>
+    <%= f. label :Название %>
+    <%= f.input :title %>
+    <BR>
+    <%= f.text_area :description %>
+    <BR>
+    <%= f.text_field :short_description %>
+    <BR>
+    <%= f.input :phone1 %>
+    <%= f.input :phone2 %>
+    <BR>
+    Введите ваше мыло
+    <%= f.email_field :email %>
+    <BR>
+    <%= f.input :city %>
+    <BR>
+    <%= f.input :address %>
+    <%=f.association :cat %>
+    <%= f.submit("Обновить") %>
+<%end%>

@@ -13,28 +13,8 @@
     <%= p.email %> <BR>
     <%= p.city %>  <BR>
     <%= p.address %>
-
+     <%= link_to "Удалить",admin_offer_path(p), :method => :delete  %>
+     <%= link_to "Изменить",edit_admin_offer_path(p.id)  %>
     <HR>
 <%end%>
-<%= link_to "Удалить",p, :method => :delete  %>
 
-<%=  simple_form_for ([@cats, @cats.offers.build]) do |f| %>
-    <BR>
-    <%= f. label :Название %>
-    <%= f.input :title %>
-    <BR>
-    <%= f.text_area :description %>
-    <BR>
-    <%= f.text_field :short_description %>
-    <BR>
-    <%= f.input :phone1 %>
-    <%= f.input :phone2 %>
-    <BR>
-    Введите ваше мыло
-    <%= f.email_field :email %>
-    <BR>
-    <%= f.input :city %>
-    <BR>
-    <%= f.input :address %>
-    <%= f.submit("Добавить") %>
-<%end%>

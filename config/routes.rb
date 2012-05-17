@@ -10,6 +10,8 @@ Catalog::Application.routes.draw do
 
   namespace :admin do
     resources :cats do
-    end
+     end
+      resources :offers do
+      end
   end
-end
+  end

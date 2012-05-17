@@ -1,5 +1,5 @@
 class Admin::CatsController < ApplicationController
-  before_filter :authenticate_admin!
+ # before_filter :authenticate_admin!
 
   def index
     @cats=Cat.all
@@ -27,6 +27,6 @@ class Admin::CatsController < ApplicationController
   def destroy
     @cats=Cat.find(params[:id])
     @cats.destroy
-    redirect_to admin_cat_path(@cats)
+    redirect_to admin_cats_path(@cats)
   end
 end
