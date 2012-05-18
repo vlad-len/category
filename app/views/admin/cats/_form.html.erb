@@ -1,5 +1,4 @@
 <%=simple_form_for @cats, :url => {:action =>"update"} do |f| %>
-    <span class="label label-info">Введите имя каталога</span>
     <%= f.input :title %>
     <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>

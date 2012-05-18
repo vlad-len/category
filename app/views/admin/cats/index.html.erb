@@ -12,7 +12,7 @@
   <tbody>
   <% @cats.each do |cat| %>
       <tr>
-        <td><%= link_to cat.title, admin_cat_path(cat) %></td>
+        <td><%= link_to cat.title, admin_cat_path(cat), :class=>'btn btn-large btn-primary disabled' %></td>
         <td><%=l cat.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

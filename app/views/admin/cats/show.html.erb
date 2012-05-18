@@ -1,20 +1,19 @@
 <%= @cats.title %>
 <%=link_to 'Назад', admin_cats_path %>
-
-<B>Заполнение обьявления</B>
 <BR>
+    <%=@cats.offers.each do |p| %>
+        <ul class="nav nav-tabs nav-stacked">
+          <li class="active"><a href="#"><%=p.title%></a></li>
+          <li><a href="#"><%= p.description %></a></li>
+          <li><a href="#"><%= p.short_description %></a></li>
+          <li><a href="#"><%= p.phone1 %></a></li>
+          <li><a href="#"> <%= p.phone2 %></a></li>
+          <li><a href="#"><%= p.email %></a></li>
+          <li><a href="#"><%= p.city %></a></li>
+          <li><a href="#"> <%= p.address %></a></li>
+        </ul>
 
-<%=@cats.offers.each do |p| %>
-    <%= p.title %> <BR>
-    <%= p.description %>  <BR>
-    <%= p.short_description %>  <BR>
-    <%= p.phone1 %>  <BR>
-    <%= p.phone2 %>  <BR>
-    <%= p.email %> <BR>
-    <%= p.city %>  <BR>
-    <%= p.address %>
     <%= link_to "Удалить",admin_offer_path(p), :method => :delete  %>
     <%= link_to "Изменить",edit_admin_offer_path(p.id)  %>
     <HR>
 <%end%>
-

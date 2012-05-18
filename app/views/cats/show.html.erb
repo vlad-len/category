@@ -1,15 +1,17 @@
-<%= @cats.title %>
+<span class="label"><%= @cats.title %></span>
+<br>
 <%=link_to 'Назад',cats_path %>
 
 
 <%=@cats.offers.each do |p| %>
-    <%= p.title %> <BR>
-    <%= p.description %>  <BR>
-    <%= p.short_description %>  <BR>
-    <%= p.phone1 %>  <BR>
-    <%= p.phone2 %>  <BR>
-    <%= p.email %> <BR>
-    <%= p.city %>  <BR>
-    <%= p.address %>
-    <HR>
+<ul class="nav nav-tabs nav-stacked">
+  <li class="active"><a href="#"><%=p.title%></a></li>
+  <li><a href="#"><%= p.description %></a></li>
+  <li><a href="#"><%= p.short_description %></a></li>
+  <li><a href="#"><%= p.phone1 %></a></li>
+  <li><a href="#"> <%= p.phone2 %></a></li>
+  <li><a href="#"><%= p.email %></a></li>
+  <li><a href="#"><%= p.city %></a></li>
+  <li><a href="#"> <%= p.address %></a></li>
+</ul>
 <%end%>
