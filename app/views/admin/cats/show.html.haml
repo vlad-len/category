@@ -1,0 +1,15 @@
+= @cats.title 
+=link_to 'Назад', admin_cats_path 
+%br
+  %table
+  -@cats.offers.each do |p|
+    %tr= p.title
+    %tr= p.description
+    %tr= p.short_description
+    %tr= p.phone1
+    %tr= p.phone2
+    %tr= p.email
+    %tr= p.city
+    %tr= p.address
+    =link_to "Удалить",admin_offer_path(p), :method => :delete
+    =link_to "Изменить",edit_admin_offer_path(p.id)
