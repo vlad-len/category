@@ -31,6 +31,7 @@
           <a class="brand" href="#">Catalog</a>
           <div class="container nav-collapse">
             <ul class="nav">
+              <li><%= link_to "Выход",destroy_user_session_path, :method => :delete%></li>
               <% Category.all.each do |cat| %>
                   <li><%= link_to cat.title, category_offers_path(cat) %></li>
               <% end %>

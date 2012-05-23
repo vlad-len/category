@@ -1,5 +1,5 @@
 %br
-%table
+%table{:class=>"table table-bordered"}
   %tr
     %th Title
     %th Description
@@ -9,7 +9,6 @@
     %th email
     %th city
     %th address
-    %th
   -@offers.each do |offer|
     %tr
       %td= offer.title
@@ -20,6 +19,5 @@
       %td= offer.email
       %td= offer.city
       %td= offer.address
-      %td
 =link_to 'Назад',categories_path
  

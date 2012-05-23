@@ -1,0 +1,6 @@
+[paths]
+default = https://bitbucket.org/user/project
+[ui]
+username = 277386847 <vlad-len@bigmir.net>
+verbose = True
+

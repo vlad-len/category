@@ -1,11 +1,16 @@
 %table{:class=>"table table-striped"}
-- @categories.each do |cat|
   %tr
-    %td= link_to cat.title, admin_category_offers_path(cat), :class=>'btn btn-large btn-primary disabled'
-    %td=l cat.created_at
-    %td= link_to t('.edit', :default => t("helpers.links.edit")),
+    %th= 'Название'
+    %th= 'Дата создания'
+    %th
+    %th
+  - @categories.each do |cat|
+    %tr
+      %td= link_to cat.title, admin_category_offers_path(cat), :class=>'btn btn-large btn-primary disabled'
+      %td=l cat.created_at
+      %td= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_category_path(cat), :class => 'btn btn-mini'
-    = link_to t('.destroy', :default => t("helpers.links.destroy")),
+      %td= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       admin_category_path(cat),
                       :method =>:delete,
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),

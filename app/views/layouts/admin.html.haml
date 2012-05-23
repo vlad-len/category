@@ -1,8 +1,8 @@
-!!!
 %html{:lang=>"en"}
   %head
     = stylesheet_link_tag "application", :media => "all"
   %body
+    = javascript_include_tag "application"
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -13,12 +13,13 @@
           %a.brand{:href => "#"} Category
           .container.nav-collapse
             .nav
+              %li= link_to "Выйти из админки",destroy_admin_session_path, :method => :delete
               - Category.all.each do |cat|
                 %li= link_to cat.title, admin_category_offers_path(cat)
+
     .container
       .content
         .row
           .span9
             =yield
     %footer
-      %p  Company кривые руки 2012

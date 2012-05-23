@@ -12,6 +12,7 @@ Catalog::Application.routes.draw do
   end
 
   namespace :admin do
+  root :to => "categories#index"
     resources :categories do
       resources :offers do
       end
