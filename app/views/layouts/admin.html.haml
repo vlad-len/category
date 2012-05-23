@@ -1,0 +1,24 @@
+!!!
+%html{:lang=>"en"}
+  %head
+    = stylesheet_link_tag "application", :media => "all"
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a{:class=>"btn btn-navbar",data: {target: ".nav-collapse", toggle: "collapse"}}
+            .icon-bar
+            .icon-bar
+            .icon-bar
+          %a.brand{:href => "#"} Category
+          .container.nav-collapse
+            .nav
+              - Category.all.each do |cat|
+                %li= link_to cat.title, admin_category_offers_path(cat)
+    .container
+      .content
+        .row
+          .span9
+            =yield
+    %footer
+      %p  Company кривые руки 2012

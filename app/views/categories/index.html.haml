@@ -1,0 +1,13 @@
+- model_class = Category.new.class
+%h1=t '.title', :default => 'Cписок каталогов'
+%table{:class=>"table table-striped"}
+  %tr
+    %th= 'Название'
+    %th= 'Дата создания'
+  - @categories.each do |cat|
+    %tr
+      %td= link_to cat.title, category_offers_path(cat.id), :class=>'btn btn-large btn-primary disabled'
+      %td=l cat.created_at
+      %td
+
+

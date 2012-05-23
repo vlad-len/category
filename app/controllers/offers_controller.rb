@@ -1,13 +1,10 @@
 class OffersController < ApplicationController
-  def create
-    @cats=Cat.find(params[:cat_id])
-    @offers=@cats.offers.create(params[:offer])
-    redirect_to admin_cats_path
+  def index
+    @category=Category.find(params[:category_id])
+    @offers=@category.offers.all
   end
-  def destroy
-    @cats=Cat.find(params[:cat_id])
-    @offers=@cats.offers.find(params[:offer])
-    @offers.destroy
-    redirect_to admin_cats_path(@cats)
+
+  def show
+    @offer=Offer.find(params[:id])
   end
 end

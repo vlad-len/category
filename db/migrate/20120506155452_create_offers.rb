@@ -9,7 +9,7 @@ class CreateOffers < ActiveRecord::Migration
       t.string :email
       t.string :city
       t.string :address
-      t.integer :cat_id
+      t.integer :category_id
 
       t.timestamps
     end

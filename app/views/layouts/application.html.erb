@@ -31,8 +31,8 @@
           <a class="brand" href="#">Catalog</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <% Cat.all.each do |cat| %>
-                  <li><%= link_to cat.title, cat_path(cat) %></li>
+              <% Category.all.each do |cat| %>
+                  <li><%= link_to cat.title, category_offers_path(cat) %></li>
               <% end %>
           <input type="text" class="search-query span2" placeholder="Найти">
 
