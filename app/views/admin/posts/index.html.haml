@@ -20,9 +20,14 @@
       %td= post.email
       %td= post.city
       %td= post.address
-      %td= image_tag post.picture_url.to_s
       %td= link_to "Удалить",admin_post_path(post.id), :method => :delete
       %td= link_to "Изменить",edit_admin_post_path(post.id)
 %br
+%table{:class=>"table table-bordered"}
+  %tr
+    %th Picture
+  -Picture.all.each do |picture|
+    %tr
+      %td= image_tag picture.picture_url.to_s
 
 =link_to 'Назад', admin_categories_path
