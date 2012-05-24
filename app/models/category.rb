@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :offers , :dependent=>:destroy
+  has_many :posts , :dependent=>:destroy
 end

@@ -6,7 +6,7 @@
     %th
   - @categories.each do |cat|
     %tr
-      %td= link_to cat.title, admin_category_offers_path(cat), :class=>'btn btn-large btn-primary disabled'
+      %td= link_to cat.title, admin_category_posts_path(cat), :class=>'btn btn-large btn-primary disabled'
       %td=l cat.created_at
       %td= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_category_path(cat), :class => 'btn btn-mini'
@@ -21,5 +21,5 @@
             new_admin_category_path(:id),
             :class => 'btn btn-primary'
 = link_to t('Создать', :default => t("Создать обьявление")),
-            new_admin_offer_path,
+            new_admin_post_path,
             :class => 'btn btn-group'

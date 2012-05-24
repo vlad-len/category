@@ -1,0 +1,28 @@
+%br
+%table{:class=>"table table-bordered"}
+  %tr
+    %th Title
+    %th Description
+    %th Short_description
+    %th phone1
+    %th phone2
+    %th email
+    %th city
+    %th address
+    %th
+  -@posts.each do |post|
+    %tr
+      %td= post.title
+      %td= post.description
+      %td= post.short_description
+      %td= post.phone1
+      %td= post.phone2
+      %td= post.email
+      %td= post.city
+      %td= post.address
+      %td= image_tag post.picture_url.to_s
+      %td= link_to "Удалить",admin_post_path(post.id), :method => :delete
+      %td= link_to "Изменить",edit_admin_post_path(post.id)
+%br
+
+=link_to 'Назад', admin_categories_path

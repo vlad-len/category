@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
   def index
-    @offer=Offer.find(params[:offer_id])
-    @pictures=@offer.picturess.all
+    @post=Post.find(params[:post_id])
+    @pictures=@post.picturess.all
   end
 
   def show

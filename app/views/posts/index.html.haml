@@ -1,0 +1,23 @@
+%br
+%table{:class=>"table table-bordered"}
+  %tr
+    %th Title
+    %th Description
+    %th Short_description
+    %th phone1
+    %th phone2
+    %th email
+    %th city
+    %th address
+  -@posts.each do |post|
+    %tr
+      %td= post.title
+      %td= post.description
+      %td= post.short_description
+      %td= post.phone1
+      %td= post.phone2
+      %td= post.email
+      %td= post.city
+      %td= post.address
+=link_to 'Назад',categories_path
+ 

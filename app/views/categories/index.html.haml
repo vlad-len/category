@@ -6,8 +6,7 @@
     %th= 'Дата создания'
   - @categories.each do |cat|
     %tr
-      %td= link_to cat.title, category_offers_path(cat.id), :class=>'btn btn-large btn-primary disabled'
+      %td= link_to cat.title, category_posts_path(cat.id), :class=>'btn btn-large btn-primary disabled'
       %td=l cat.created_at
       %td
-
 

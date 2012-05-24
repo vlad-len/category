@@ -15,7 +15,7 @@
             .nav
               %li= link_to "Выйти из админки",destroy_admin_session_path, :method => :delete
               - Category.all.each do |cat|
-                %li= link_to cat.title, admin_category_offers_path(cat)
+                %li= link_to cat.title, admin_category_posts_path(cat)
 
     .container
       .content

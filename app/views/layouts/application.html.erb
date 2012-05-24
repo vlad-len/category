@@ -33,7 +33,7 @@
             <ul class="nav">
               <li><%= link_to "Выход",destroy_user_session_path, :method => :delete%></li>
               <% Category.all.each do |cat| %>
-                  <li><%= link_to cat.title, category_offers_path(cat) %></li>
+                  <li><%= link_to cat.title, category_posts_path(cat) %></li>
               <% end %>
           <input type="text" class="search-query span2" placeholder="Найти">
 
