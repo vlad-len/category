@@ -20,8 +20,9 @@
       %td= offer.email
       %td= offer.city
       %td= offer.address
-      %td
+      %td= image_tag offer.picture_url.to_s
       %td= link_to "Удалить",admin_offer_path(offer.id), :method => :delete
       %td= link_to "Изменить",edit_admin_offer_path(offer.id)
+%br
 
 =link_to 'Назад', admin_categories_path
