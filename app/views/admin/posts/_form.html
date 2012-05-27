@@ -1,0 +1,32 @@
+<head>
+<h1> Создаем Обьявление </h1>
+ </head>
+ <body>
+<form method="post" action="/admin/posts"  >
+    <input type="text" name="title" size="10" maxlength="10">
+    <br>
+    <textarea name="description" cols="15" rows="10"> </textarea>
+    <br>
+    <textarea name="short_description" cols="5" rows="5"> </textarea>
+    <p>введите телефоны</p>
+    <input type="text" name="phone1" size="10" maxlength="10" ><br>
+    <input type="text" name="phone2" size="10" maxlength="10" > <br>
+    <p>введите мыло</p>
+    <input type="text" name="email" size="10" maxlength="20" >  <br>
+    <p>введите город</p>
+    <input type="text" name="city" size="10" maxlength="10" >   <br>
+    <p>введите аддресс</p>
+    <input type="text" name="address" size="10" maxlength="10">  <br>
+    <p>Выберите категорию</p>
+    <select name="category_id">
+        <option value="1">Мобильные</option>
+        <option value="2">ПК</option>
+    </select> <br>
+    <input name="image[]" type="file" />
+    <input name="image[]" type="file" />
+    <input name="image[]" type="file" />
+    <input name="image[]" type="file"/>
+
+    <input type="submit" value="create">
+</form>
+ </body>

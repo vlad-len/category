@@ -10,7 +10,23 @@ class Admin::PostsController < ApplicationController
   end
 
   def create
-    @post=Post.new(params[:offer])
+    @post=Post.new
+    @post.title=params[:title]
+    @post.description=params[:description]
+    @post.short_description=params[:short_description]
+    @post.phone1=params[:phone1]
+    @post.phone2=params[:phone2]
+    @post.email=params[:email]
+    @post.city=params[:city]
+    @post.address=params[:address]
+    @post.category_id=params[:category_id]
+    @image=Picture.new
+    @image.image=params[:image1]
+    @image.image=params[:image2]
+    @image.image=params[:image3]
+    @image.image=params[:image4]
+    puts @image.inspect
+    puts "OLOLOLOLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
     @post.save
     redirect_to admin_categories_path
   end
@@ -26,7 +42,7 @@ class Admin::PostsController < ApplicationController
 
   def update
     @post=Post.find(params[:id])
-    @post.update_attributes(params[:offer])
+    @post.update_attributes(params[:post])
     redirect_to admin_categories_path(@category)
   end
 
