@@ -2,7 +2,7 @@
 <h1> Создаем Обьявление </h1>
  </head>
  <body>
-<form method="post" action="/admin/posts"  >
+<form method="post" action="/admin/posts" enctype="multipart/form-data" >
     <input type="text" name="title" size="10" maxlength="10">
     <br>
     <textarea name="description" cols="15" rows="10"> </textarea>
@@ -22,10 +22,12 @@
         <option value="1">Мобильные</option>
         <option value="2">ПК</option>
     </select> <br>
-    <input name="image[]" type="file" />
-    <input name="image[]" type="file" />
-    <input name="image[]" type="file" />
-    <input name="image[]" type="file"/>
+
+    <input name="image1" type="file" />
+    <input name="image2" type="file" />
+    <input name="image3" type="file" />
+    <input name="image4" type="file"/>
+
 
     <input type="submit" value="create">
 </form>

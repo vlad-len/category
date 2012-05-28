@@ -28,6 +28,6 @@
     %th Picture
   -Picture.all.each do |picture|
     %tr
-      %td= image_tag picture.picture_url.to_s
+      %td= image_tag picture.image.thumb
 
 =link_to 'Назад', admin_categories_path

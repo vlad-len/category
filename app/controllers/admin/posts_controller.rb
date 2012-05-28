@@ -20,14 +20,25 @@ class Admin::PostsController < ApplicationController
     @post.city=params[:city]
     @post.address=params[:address]
     @post.category_id=params[:category_id]
+    @post.save
+
     @image=Picture.new
     @image.image=params[:image1]
+    @image.post_id=@post.id
+    @image.save
+    @image=Picture.new
     @image.image=params[:image2]
+    @image.post_id=@post.id
+    @image.save
+    @image=Picture.new
     @image.image=params[:image3]
+    @image.post_id=@post.id
+    @image.save
+    @image=Picture.new
     @image.image=params[:image4]
+    @image.post_id=@post.id
     puts @image.inspect
-    puts "OLOLOLOLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-    @post.save
+    @image.save
     redirect_to admin_categories_path
   end
 
