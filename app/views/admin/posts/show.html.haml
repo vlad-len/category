@@ -9,7 +9,6 @@
     %th email
     %th city
     %th address
-    %th
     %tr
       %td=@post.title
       %td=@post.description
@@ -22,7 +21,7 @@
 %br
 %table{:class=>"table table-bordered"}
   %tr
-    %th Picture
+    %th Pictures
   -@images.each do |picture|
     %tr
       %td= image_tag picture.image.thumb

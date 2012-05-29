@@ -22,23 +22,18 @@ class Admin::PostsController < ApplicationController
     @post.category_id=params[:category_id]
     @post.save
 
-    @image=Picture.new
-    @image.image=params[:image1]
-    @image.post_id=@post.id
-    @image.save
-    @image=Picture.new
-    @image.image=params[:image2]
-    @image.post_id=@post.id
-    @image.save
-    @image=Picture.new
-    @image.image=params[:image3]
-    @image.post_id=@post.id
-    @image.save
-    @image=Picture.new
-    @image.image=params[:image4]
-    @image.post_id=@post.id
+    images = params[:images]
+    images.each do |image|
+      @image=Picture.new
+      @image.image=image
+      @image.post_id=@post.id
+      @image.save
+    end
+    puts params.inspect
     puts @image.inspect
-    @image.save
+    puts "_________________________________________"
+    puts "_________________________________________"
+    puts "_________________________________________"
     redirect_to admin_categories_path
   end
 
