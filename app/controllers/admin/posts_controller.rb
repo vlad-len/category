@@ -49,6 +49,8 @@ class Admin::PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
+    @images=@post.pictures.all
+
   end
 
   def update
