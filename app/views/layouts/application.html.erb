@@ -10,6 +10,7 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
+    <script type="text/javascript" src="/catalog/app/assets/javascripts"></script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
@@ -31,13 +32,17 @@
           <a class="brand" href="#">Catalog</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Выход",destroy_user_session_path, :method => :delete%></li>
-              <% Category.all.each do |cat| %>
-                  <li><%= link_to cat.title, category_posts_path(cat) %></li>
-              <% end %>
-          <input type="text" class="search-query span2" placeholder="Найти">
-
+              <li> <%= link_to "Home",categories_path %></li>
+              <li><%= link_to "Add post",categories_path %></li>
+              <li><%= link_to "My posts",categories_path %></li>
             </ul>
+            <ul class="nav pull-right">
+              <li><a href="#"><%= current_user.email%> </a> </li>
+              <li><%= link_to "Sign In",categories_path %></li>
+              <li><%= link_to "Выход",destroy_user_session_path, :method => :delete%></li>
+            </ul>
+
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
