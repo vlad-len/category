@@ -5,8 +5,11 @@ Catalog::Application.routes.draw do
   root :to => "categories#index"
   resource :admins
   resources :categories do
-    resources :posts
+    resources :posts do
+    end
   end
+
+  resources :posts
   namespace :admin do
     resources :posts
   end

@@ -1,0 +1,14 @@
+%h1 Создаем Обьявление
+=simple_form_for [@post] do |f|
+  =f.input :title
+  =f.text_area :description
+  %br
+  =f.text_field :short_description
+  =f.input :phone1
+  =f.input :phone2
+  =f.email_field :email
+  =f.input :city
+  =f.input :address
+  =f.association :category
+  = f.file_field :picture
+  =f.button :submit, :class=>'btn btn-success'

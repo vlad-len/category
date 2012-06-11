@@ -33,12 +33,12 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li> <%= link_to "Home",categories_path %></li>
-              <li><%= link_to "Add post",categories_path %></li>
+              <li><%= link_to "Add post",new_post_path %></li>
               <li><%= link_to "My posts",categories_path %></li>
             </ul>
             <ul class="nav pull-right">
               <li><a href="#"><%= current_user.email%> </a> </li>
-              <li><%= link_to "Sign In",categories_path %></li>
+              <li><%= link_to "Sign In",new_user_session_path %></li>
               <li><%= link_to "Выход",destroy_user_session_path, :method => :delete%></li>
             </ul>
 
