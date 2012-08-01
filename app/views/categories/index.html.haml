@@ -4,9 +4,10 @@
   %tr
     %th= 'Название'
     %th= 'Дата создания'
-  - @categories.each do |cat|
+  - @categories.each do |category|
     %tr
-      %td= link_to cat.title, category_posts_path(cat.id), :class=>'btn btn-large btn-primary disabled'
-      %td=l cat.created_at
+      %td= link_to category.title, category_posts_path(category.id), :class=>'btn btn-large btn-primary disabled'
+      %td=l category.created_at
       %td
+
 

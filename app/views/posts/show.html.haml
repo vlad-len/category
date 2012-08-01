@@ -19,11 +19,4 @@
       %td=@post.email
       %td=@post.city
       %td=@post.address
-      %td=link_to "Показать",post_path(post.id)
 %br
-%table{:class=>"table table-bordered"}
-  %tr
-    %th Picture
-  -@images.each do |picture|
-    %tr
-      %td= image_tag picture.image.thumb
