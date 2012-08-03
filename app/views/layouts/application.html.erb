@@ -15,6 +15,7 @@
     <script src="jquery-1.7.2.min.js"></script>
   </head>
   <body>
+
   <%= javascript_include_tag "application" %>
   <div class="span3">
     <div class="well sidebar-nav">
@@ -23,17 +24,31 @@
         <script type="text/javascript">
             $(document).ready(function(){
 
-                $("li").click(function(){alert("Вы нажали один раз на первую кнопку!");});
+                $("li").click(function(){$("#catalog").slideToggle(400);});
 
             });
+
         </script>
+
+        <ul id="catalog">
+          <% @categories.each do |category| %>
+              <% if category.child_id==2 && category.parent_id=category.child_id=category.such_id %>
+                  <%then %>
+                  <li><%= link_to category.title, category_posts_path(category.id), :class=>'btn btn-large btn-primary disabled'%></li>
+              <%end%>
+          <%end%>>
+        </ul>
+
+
+
+
 
 
 
         <% @categories.each do |category| %>
         <% if category.parent_id==1  %>
         <%then %>
-        <li><%= link_to category.title, category_posts_path(category.id), :class=>'btn btn-large btn-primary disabled'%></li>
+        <li><a href="#"><%=link_to category.title, category_posts_path(category.id)%></a></li>
          <%end%>
          <%end%>
         <li><a href="#">Link</a></li>
