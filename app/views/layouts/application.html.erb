@@ -32,11 +32,12 @@
 
         <ul id="catalog">
           <% @categories.each do |category| %>
-              <% if category.child_id==2 && category.parent_id=category.child_id=category.such_id %>
-                  <%then %>
+          <% if category.parent %>
+                  <% then %>
                   <li><%= link_to category.title, category_posts_path(category.id), :class=>'btn btn-large btn-primary disabled'%></li>
               <%end%>
-          <%end%>>
+              <%end%>
+
         </ul>
 
 
@@ -46,7 +47,7 @@
 
 
         <% @categories.each do |category| %>
-        <% if category.parent_id==1  %>
+        <% if category.parent_id==nil  %>
         <%then %>
         <li><a href="#"><%=link_to category.title, category_posts_path(category.id)%></a></li>
          <%end%>

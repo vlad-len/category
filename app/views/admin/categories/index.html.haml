@@ -15,10 +15,12 @@
                       :method =>:delete,
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger'
+      %td= link_to t('.new', :default => t("Новый подкаталог")),
+                      new_admin_category_path(:parent_id => cat)
 
   %br
 = link_to t('.new', :default => t("Новый каталог")),
-            new_admin_category_path(:id),
+            new_admin_category_path(:parent_id),
             :class => 'btn btn-primary'
 = link_to t('Создать', :default => t("Создать обьявление")),
             new_admin_post_path,
