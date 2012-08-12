@@ -9,6 +9,8 @@ Catalog::Application.routes.draw do
     end
   end
 
+  resources :contacts
+
   resources :posts
   namespace :admin do
     resources :posts
