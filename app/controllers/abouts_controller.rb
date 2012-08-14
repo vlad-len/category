@@ -4,4 +4,9 @@ class AboutsController < ApplicationController
     @categories=Category.all
   end
 
+  def show
+    @about=About.find(params[:id])
+    @categories=Category.all
+  end
+
 end

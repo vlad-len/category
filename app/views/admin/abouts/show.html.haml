@@ -4,8 +4,7 @@
     %th Description
     %th Short_description
 
-  -@abouts.each do |about|
     %tr
-      %td= about.description
-      %td= about.short_description
+      %td= @about.description
+      %td= @about.short_description
 =link_to 'Назад', admin_abouts_path

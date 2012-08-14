@@ -14,5 +14,9 @@ class Admin::AboutsController < ApplicationController
     redirect_to admin_abouts_path(@abouts)
   end
 
+  def show
+    @about=About.find(params[:id])
+  end
+
 
 end
