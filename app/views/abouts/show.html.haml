@@ -1,0 +1,11 @@
+%h2  О свадьбе
+%table{:class=>"table table-bordered"}
+  %tr
+    %th Description
+    %th Short_description
+
+  -@abouts.each do |about|
+    %tr
+      %td= about.description
+      %td= about.short_description
+=link_to 'Назад', abouts_path
