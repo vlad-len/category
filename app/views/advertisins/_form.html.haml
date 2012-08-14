@@ -1,0 +1,20 @@
+=simple_form_for [@advertisin] do |f|
+  =f.input :name
+  =f.input :profile
+  =f.input :phone1
+  =f.input :phone2
+  =f.input :phone3
+  =f.input :email
+  =f.input :site1
+  =f.input :site2
+  =f.input :city
+  =f.input :adress
+  =f.text_area :shortdescription
+  %br
+  = f.file_field :picture
+  = f.file_field :picture
+  = f.file_field :picture
+  = f.file_field :picture
+  = f.file_field :picture
+
+  =f.button :submit

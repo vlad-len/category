@@ -10,6 +10,7 @@ Catalog::Application.routes.draw do
   end
 
   resources :contacts
+  resources :advertisins
 
   resources :posts
   namespace :admin do
