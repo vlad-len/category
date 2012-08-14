@@ -1,4 +1,8 @@
 Catalog::Application.routes.draw do
+  get "namespace/Admin"
+
+  get "namespace/About"
+
   devise_for :admins
 
   devise_for :users
@@ -11,6 +15,12 @@ Catalog::Application.routes.draw do
 
   resources :contacts
   resources :advertisins
+
+  resources :abouts
+  namespace :admin do
+    resources :abouts
+  end
+
 
   resources :posts
   namespace :admin do
